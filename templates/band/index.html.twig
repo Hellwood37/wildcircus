@@ -8,22 +8,20 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
                 <th>Picture</th>
                 <th>Instrument</th>
-                <th>Wikilink</th>
+                <th>External link</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for band in bands %}
             <tr>
-                <td>{{ band.id }}</td>
                 <td>{{ band.Name }}</td>
-                <td>{{ band.Picture }}</td>
+                <td><img src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="320px"</td>
                 <td>{{ band.Instrument }}</td>
-                <td>{{ band.wikilink }}</td>
+                <td><a href="{{ band.Wikilink }}">Lien</a></td>
                 <td>
                     <a href="{{ path('band_show', {'id': band.id}) }}">show</a>
                     <a href="{{ path('band_edit', {'id': band.id}) }}">edit</a>

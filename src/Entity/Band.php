@@ -32,9 +32,10 @@ class Band
     private $Instrument;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $wikilink;
+    private $Wikilink;
+
 
     public function getId(): ?int
     {
@@ -79,13 +80,15 @@ class Band
 
     public function getWikilink(): ?string
     {
-        return $this->wikilink;
+        return $this->Wikilink;
     }
 
-    public function setWikilink(string $wikilink): self
+    public function setWikilink(?string $Wikilink): self
     {
-        $this->wikilink = $wikilink;
+        $this->Wikilink = $Wikilink;
 
         return $this;
     }
+
+
 }

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Band;
-use App\Form\BandType;
+use App\Form\Band3Type;
 use App\Repository\BandRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +31,7 @@ class BandController extends AbstractController
     public function new(Request $request): Response
     {
         $band = new Band();
-        $form = $this->createForm(BandType::class, $band);
+        $form = $this->createForm(Band3Type::class, $band);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -63,7 +63,7 @@ class BandController extends AbstractController
      */
     public function edit(Request $request, Band $band): Response
     {
-        $form = $this->createForm(BandType::class, $band);
+        $form = $this->createForm(Band3Type::class, $band);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
