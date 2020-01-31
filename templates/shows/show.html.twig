@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Shows{% endblock %}
+{% block title %}{{ show.Location }}{% endblock %}
 
 {% block body %}
-    <h1>Shows</h1>
+    <h1>{{ show.Location }}</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ show.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ show.Date }}</td>
-            </tr>
             <tr>
                 <th>Location</th>
                 <td>{{ show.Location }}</td>
             </tr>
             <tr>
-                <th>Price</th>
-                <td>{{ show.Price }}</td>
+                <th>Get_tickets</th>
+                <td><a href="{{ show.GetTickets }}">Get tickets</a></td>
+            </tr>
+            <tr>
+                <th>Concert_hall</th>
+                <td>{{ show.concertHall }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ show.Date ? show.Date|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>
     </table>

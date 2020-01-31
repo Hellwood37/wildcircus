@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Shows index{% endblock %}
+{% block title %}Tour{% endblock %}
 
 {% block body %}
-    <h1>Shows index</h1>
+    <h1>Tour</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Date</th>
                 <th>Location</th>
-                <th>Price</th>
+                <th>Get_tickets</th>
+                <th>Concert_hall</th>
+                <th>Date</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for show in shows %}
             <tr>
-                <td>{{ show.id }}</td>
-                <td>{{ show.Date }}</td>
                 <td>{{ show.Location }}</td>
-                <td>{{ show.Price }}</td>
+                <td><a href="{{ show.GetTickets }}">Tickets</a></td>
+                <td>{{ show.concertHall }}</td>
+                <td>{{ show.Date ? show.Date|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('shows_show', {'id': show.id}) }}">show</a>
                     <a href="{{ path('shows_edit', {'id': show.id}) }}">edit</a>
@@ -29,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="7">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
