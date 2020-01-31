@@ -23,8 +23,8 @@
                 <td>{{ show.concertHall }}</td>
                 <td>{{ show.Date ? show.Date|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('shows_show', {'id': show.id}) }}">show</a>
-                    <a href="{{ path('shows_edit', {'id': show.id}) }}">edit</a>
+                    <button type="button" class="btn btn-warning"><a href="{{ path('shows_show', {'id': show.id}) }}">show</a></button>
+                    <button type="button" class="btn btn-warning"><a href="{{ path('shows_edit', {'id': show.id}) }}">edit</a></button>                   
                 </td>
             </tr>
         {% else %}
@@ -34,6 +34,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('shows_new') }}">Create new</a>
+    <button type="button" class="btn btn-warning"><a href="{{ path('shows_new') }}">Create new</a></button>                   
 {% endblock %}
