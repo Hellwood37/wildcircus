@@ -12,9 +12,10 @@ class ShowsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Date')
             ->add('Location')
-            ->add('Price')
+            ->add('Get_tickets')
+            ->add('concert_hall')
+            ->add('Date')
         ;
     }
 

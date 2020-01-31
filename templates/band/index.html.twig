@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Band index{% endblock %}
+{% block title %}Current Avatar's members{% endblock %}
 
 {% block body %}
-    <h1>Band index</h1>
+    <h1>Current Avatar's members</h1>
 
     <table class="table">
         <thead>
@@ -21,7 +21,7 @@
                 <td>{{ band.Name }}</td>
                 <td><img src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="320px"</td>
                 <td>{{ band.Instrument }}</td>
-                <td><a href="{{ band.Wikilink }}">Lien</a></td>
+                <td><a href="{{ band.Wikilink }}">Link</a></td>
                 <td>
                     <a href="{{ path('band_show', {'id': band.id}) }}">show</a>
                     <a href="{{ path('band_edit', {'id': band.id}) }}">edit</a>

@@ -2,16 +2,46 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" href="build/css/app.scss">
         <script src="build/js/app.js"></script>
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="/pictures/Favicon.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet"/>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <a class="navbar-brand" href="{{ path('index') }}">Wild Circus</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('band_index') }}">Band's members<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">   
+                        <a class="nav-link" href="{{ path('shows_index') }}">Tour<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">                          
+                        <a class="nav-link" href="{{ path('contact') }}">Contact<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                </form>
+            </div>
+        </nav>
         {% block body %}{% endblock %}
-        
+            {% if app.user %}
+                {{ app.user.email }}
+                <button type="button" class="btn-lg btn-warning text-dark"><a href="{{ path('app_logout') }}"> Se déconnecter</a></button>
+                
+                {% else %}
+                    <button type="button" class="btn-lg btn-warning text-dark"><a href="{{ path('app_login') }}"> Se connecter</a></button>
+            {% endif %}
         {% block javascripts %}
            {{ encore_entry_script_tags('app') }}
         {% endblock %}

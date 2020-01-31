@@ -1,31 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Band{% endblock %}
+{% block title %}{{ band.Name }}{% endblock %}
 
 {% block body %}
-    <h1>Band</h1>
+    <h1>{{ band.Name }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ band.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ band.Name }}</td>
-            </tr>
-            <tr>
                 <th>Picture</th>
-                <td>{{ band.Picture }}</td>
+                <td><img src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="320px"</td>
             </tr>
             <tr>
                 <th>Instrument</th>
                 <td>{{ band.Instrument }}</td>
             </tr>
             <tr>
-                <th>Wikilink</th>
-                <td>{{ band.Wikilink }}</td>
+                <th>Link</th>
+                <td><a href="{{ band.Wikilink }}">Link</a></td>
             </tr>
         </tbody>
     </table>

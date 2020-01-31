@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Shows{% endblock %}
+{% block title %}Edit {{ show.Location }} show{% endblock %}
 
 {% block body %}
-    <h1>Edit Shows</h1>
+    <h1>Edit {{ show.Location }} show</h1>
 
     {{ include('shows/_form.html.twig', {'button_label': 'Update'}) }}
 
