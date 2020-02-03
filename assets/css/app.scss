@@ -55,9 +55,16 @@ tr {
     height: 100%;
 }
 
-.card {
+.carddiv {
     display: flex;
     justify-content: center;
-    height: 100%;
     color: black;
+}
+
+.card {
+    align-items: center;
+}
+
+.card-title {
+    font-weight: bold;
 }

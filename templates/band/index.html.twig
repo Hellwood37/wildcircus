@@ -7,13 +7,17 @@
 
         {% for band in bands %}
             <br>
-            <div class="card bg-warning col-xs-12 col-sm-6 col-lg-4" style="width: 18rem;">
-                <img class="card-img-top" src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="250px">
-                <div class="card-body">
-                    <h5 class="card-title">{{ band.Name }}</h5>
-                    <p class="card-text">Instrument: {{ band.Instrument }}</p>
-                    <a href="{{ path('band_show', {'id': band.id}) }}">show</a>
-                    <a href="{{ path('band_edit', {'id': band.id}) }}">edit</a>
+            <div class="carddiv">
+            
+                <div class="card bg-warning col-xs-12 col-sm-6 col-lg-4" style="width: 18rem;">
+                    <h3 class="card-title">{{ band.Name }}</h3>
+                    <img class="card-img-top" src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="250px">
+                    <div class="card-body">
+                        <p class="card-text">Instrument: {{ band.Instrument }}</p>
+                        <button type="button" class="btn btn-outline-dark"><a href="{{ band.Wikilink }}">Link</a></button>
+                        <button type="button" class="btn btn-outline-dark"><a href="{{ path('band_show', {'id': band.id}) }}">show</a></button>
+                        <button type="button" class="btn btn-outline-dark"><a href="{{ path('band_edit', {'id': band.id}) }}">edit</a></button>
+                    </div>
                 </div>
             </div>
             <br>
