@@ -7,7 +7,6 @@
 
     {{ include('band/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('band_index') }}">back to list</a>
-
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('band_index') }}">back to list</a></button>
     {{ include('band/_delete_form.html.twig') }}
 {% endblock %}
