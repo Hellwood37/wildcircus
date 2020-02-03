@@ -5,35 +5,26 @@
 {% block body %}
     <h1>Current Avatar's members</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Picture</th>
-                <th>Instrument</th>
-                <th>External link</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for band in bands %}
-            <tr>
-                <td>{{ band.Name }}</td>
-                <td><img src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="320px"</td>
-                <td>{{ band.Instrument }}</td>
-                <td><a href="{{ band.Wikilink }}">Link</a></td>
-                <td>
-                    <a href="{{ path('band_show', {'id': band.id}) }}">show</a>
-                    <a href="{{ path('band_edit', {'id': band.id}) }}">edit</a>
-                </td>
-            </tr>
+            <br>
+            <div class="carddiv">
+            
+                <div class="card bg-warning col-xs-12 col-sm-6 col-lg-4" style="width: 18rem;">
+                    <h3 class="card-title">{{ band.Name }}</h3>
+                    <img class="card-img-top" src="{{ band.Picture }}" alt="Picture of {{ band.Name }}" width="250px">
+                    <div class="card-body">
+                        <p class="card-text">Instrument: {{ band.Instrument }}</p>
+                        <button type="button" class="btn btn-outline-dark"><a href="{{ band.Wikilink }}">Link</a></button>
+                        <button type="button" class="btn btn-outline-dark"><a href="{{ path('band_show', {'id': band.id}) }}">show</a></button>
+                        <button type="button" class="btn btn-outline-dark"><a href="{{ path('band_edit', {'id': band.id}) }}">edit</a></button>
+                    </div>
+                </div>
+            </div>
+            <br>
         {% else %}
             <tr>
                 <td colspan="6">no records found</td>
             </tr>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('band_new') }}">Create new</a>
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('band_new') }}">Create new</a></button>
 {% endblock %}

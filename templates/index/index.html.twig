@@ -5,5 +5,10 @@
 {% block body %}
 <h1>Wild Circus presents:<h1>
 <img src="/pictures/Avatar-Country-Website-Header.png" class="index-title">
-<h2>The fully unofficial Avatar's band page !</h2>
+<h2 class="h2home">The fully unofficial Avatar's band page !</h2>
+<div class="homebuttoncontainer">
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('band_index') }}">The Band Members</a></button>
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('shows_index') }}">Tour Dates</a></button>
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('contact') }}">Contact</a></button>
+</div>
 {% endblock %}

@@ -22,9 +22,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('band_index') }}">back to list</a>
+    
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('band_index') }}">back to list</a></button>
+    <button type="button" class="btn-lg btn-warning"><a href="{{ path('band_edit', {'id': band.id}) }}">edit</a></button>
 
-    <a href="{{ path('band_edit', {'id': band.id}) }}">edit</a>
+    
 
     {{ include('band/_delete_form.html.twig') }}
 {% endblock %}

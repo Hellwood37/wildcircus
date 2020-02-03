@@ -6,9 +6,16 @@
 
 body {
     background-image: url("https://avatarmetal.com/wp-content/themes/avatarstudio/images/avatar-website-bg.jpg");
+    width: auto;
+    height: auto;
     font-family: 'Amatic SC';font-size: 22px;
     color: white;
     width: 100%;
+}
+
+.index-title{
+    width: 100%;
+    height: auto;
 }
 
 a {
@@ -31,6 +38,40 @@ tr {
     color: white;
 }
 
+<<<<<<< HEAD
 .index-title {
     width: 100%;
 }
+=======
+.navlogo {
+    width: 7%;
+    height: auto;
+}
+.button {
+    color: black;
+}
+
+.h2home {
+    text-align: center;
+}
+
+.homebuttoncontainer {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.carddiv {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.card {
+    align-items: center;
+}
+
+.card-title {
+    font-weight: bold;
+}
+>>>>>>> d8d28fa1de0a59a6a4c95cee3ecd30fd5a8af899
